@@ -12,20 +12,3 @@ body {
   grid-template-rows: 8% 92%;
   font-family: Arial, Helvetica, sans-serif;
 }
-
-a {
-  color: black;
-}
-
-a:link {
-  text-decoration: none;
-  color: black;
-}
-
-a:active {
-  color: #a5ddf5;
-}
-
-a:hover {
-  color: #a5ddf5;
-}

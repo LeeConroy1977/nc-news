@@ -1,0 +1,25 @@
+.voteDetails {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 22%;
+  height: 50%;
+  margin-right: 0.5rem;
+  border: 2px solid rgb(52, 52, 52);
+  background-color: #fffefe;
+  border-radius: 6px;
+}
+
+.thumbUp {
+  font-size: 1.4rem;
+  color: green;
+}
+.thumbDown {
+  color: red;
+  font-size: 1.4rem;
+  margin-top: 0.2rem;
+}
+
+.numVotes {
+  margin-right: 0.5rem;
+}

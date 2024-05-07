@@ -43,6 +43,9 @@
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
+  list-style: none;
 }
 
 .userAvatar {
@@ -51,3 +54,20 @@
   align-items: center;
   cursor: pointer;
 }
+
+/* a {
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:active {
+  color: #a5ddf5;
+}
+
+a:hover {
+  color: #a5ddf5;
+} */

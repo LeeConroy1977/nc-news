@@ -1,0 +1,19 @@
+.commentsDetails {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.commentLogo {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  color: rgb(52, 52, 52);
+}
+
+.numComments {
+  margin-left: 0.4rem;
+}
