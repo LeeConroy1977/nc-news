@@ -1,0 +1,8 @@
+.main {
+  display: grid;
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+}

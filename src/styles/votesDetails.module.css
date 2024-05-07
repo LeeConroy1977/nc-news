@@ -1,0 +1,16 @@
+.voteDetails {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+}
+
+.thumbUp {
+  font-size: 1.2rem;
+  color: green;
+}
+.thumbDown {
+  color: red;
+  font-size: 1.3rem;
+}

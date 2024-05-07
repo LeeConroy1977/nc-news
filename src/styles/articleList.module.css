@@ -1,0 +1,13 @@
+.articleList {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  gap: 2rem;
+}

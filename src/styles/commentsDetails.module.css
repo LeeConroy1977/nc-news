@@ -1,0 +1,16 @@
+.commentsDetails {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.commentLogo {
+  font-size: 1.1rem;
+}
+
+.numComments {
+  margin-left: 0.2rem;
+}
