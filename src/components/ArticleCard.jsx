@@ -6,7 +6,6 @@ import VotesDetails from "./VotesDetails";
 const ArticleCard = ({ article, users }) => {
   const {
     title,
-    body,
     article_img_url,
     topic,
     created_at,
@@ -27,7 +26,7 @@ const ArticleCard = ({ article, users }) => {
     });
 
   return (
-    <li className={styles.articleCard}>
+    <>
       <div className={styles.topContainer}>
         <img
           className={styles.articleImage}
@@ -53,7 +52,7 @@ const ArticleCard = ({ article, users }) => {
           </div>
         </div>
       </div>
-    </li>
+    </>
   );
 };
 

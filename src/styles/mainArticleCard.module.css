@@ -1,0 +1,89 @@
+.mainArticleCard {
+  width: 70%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid black;
+}
+
+.textContainer {
+  /* position: absolute; */
+  width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  border-right: 2px solid black;
+}
+
+.category {
+  position: relative;
+  top: 0;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0.2rem 1.4rem;
+  background-color: #a5ddf5;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  color: black;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.articleTitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  padding: 1rem 4rem;
+}
+
+.articleBody {
+  padding: 0.2rem 3rem;
+  font-size: 0.85rem;
+  word-spacing: 0.06rem;
+  letter-spacing: 0.01rem;
+  line-height: 1.4rem;
+}
+
+.time {
+  margin-top: auto;
+  margin-left: auto;
+  padding: 1.5rem 4rem;
+}
+
+.timeStamp,
+.dateStamp {
+  color: rgb(52, 52, 52);
+  font-weight: bold;
+}
+
+.timeStamp {
+  margin-right: 0.3rem;
+}
+
+.imageContainer {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.articleImage {
+  width: 100%;
+  height: 84%;
+}
+
+.articleStats {
+  width: 100%;
+  height: 16%;
+  display: flex;
+  align-items: center;
+  border-top: 2px solid black;
+}
