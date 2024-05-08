@@ -1,0 +1,60 @@
+.commentCard {
+  width: 100%;
+  margin: 0;
+  /* padding: 1rem; */
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px solid black;
+  border-top: none;
+  background-color: white;
+}
+
+.commentAuthorBox {
+  width: 15%;
+  height: 100%;
+}
+
+.commentBodyBox {
+  width: 70%;
+  height: 100%;
+  padding: 0.4rem;
+}
+.commentVoteBox {
+  width: 12%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid black */
+  padding: 0;
+  border-radius: 6px;
+}
+.author {
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+
+.commentBody {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.time {
+  margin-top: auto;
+  margin-left: auto;
+  /* padding: 1rem 3rem; */
+}
+
+.timeStamp,
+.dateStamp {
+  color: rgb(52, 52, 52, 1);
+  font-weight: bold;
+  font-size: 0.65rem;
+}
+
+.timeStamp {
+  margin-right: 0.3rem;
+}

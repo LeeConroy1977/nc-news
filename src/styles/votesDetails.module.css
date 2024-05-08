@@ -2,15 +2,15 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 60%;
+  width: 100%;
   height: 100%;
 }
 
 .thumbUp {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: green;
 }
 .thumbDown {
   color: red;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }

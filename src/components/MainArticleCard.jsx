@@ -38,6 +38,7 @@ const MainArticleCard = ({ article, users }) => {
           <span className={styles.timeStamp}>
             <i>{timeStamp}</i>
           </span>
+
           <span className={styles.dateStamp}>
             <i>{dateStamp}</i>
           </span>

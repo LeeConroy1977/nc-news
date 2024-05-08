@@ -2,24 +2,26 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 22%;
-  height: 50%;
+  width: 26%;
+  height: 44%;
   margin-right: 0.5rem;
   border: 2px solid rgb(52, 52, 52);
   background-color: #fffefe;
   border-radius: 6px;
+  padding: 0 0.2rem;
 }
 
 .thumbUp {
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: green;
 }
 .thumbDown {
   color: red;
-  font-size: 1.4rem;
-  margin-top: 0.2rem;
+  font-size: 1rem;
+  margin-top: 0rem;
 }
 
 .numVotes {
   margin-right: 0.5rem;
+  font-size: 0.8rem;
 }
