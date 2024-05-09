@@ -1,0 +1,41 @@
+.hidden {
+  position: absolute;
+  margin: auto auto;
+  visibility: hidden;
+}
+
+.visible {
+  position: absolute;
+  visibility: visible;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  z-index: 3;
+  border: 2px solid black;
+}
+
+.btn {
+  position: relative;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 1.8rem;
+  color: black;
+}
+
+.signInBtn {
+  padding: 0.4rem 0.8rem;
+  background-color: #a5ddf5;
+  font-weight: bold;
+  list-style: none;
+  text-decoration: none;
+  border: 2px solid black;
+  margin-top: 0.5rem;
+  color: black;
+}

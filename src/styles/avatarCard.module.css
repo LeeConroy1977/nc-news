@@ -1,0 +1,25 @@
+.avatarBox {
+  width: 100px;
+  height: 110px;
+  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+}
+
+.avatarImage {
+  width: 60px;
+  height: 60px;
+  /* border-radius: 50%; */
+  border: 6px solid black;
+  padding: 0.2rem;
+  margin-top: 0.5rem;
+}
+
+.avatarName {
+  font-size: 0.7rem;
+  font-weight: bold;
+}

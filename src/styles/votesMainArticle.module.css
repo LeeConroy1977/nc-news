@@ -14,11 +14,13 @@
 .thumbUp {
   font-size: 1rem;
   color: green;
+  cursor: pointer;
 }
 .thumbDown {
   color: red;
   font-size: 1rem;
   margin-top: 0rem;
+  cursor: pointer;
 }
 
 .numVotes {

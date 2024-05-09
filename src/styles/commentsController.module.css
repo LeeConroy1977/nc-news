@@ -35,3 +35,10 @@
   border-radius: 50%;
   background-color: white;
 }
+
+.expandLess:hover {
+  background-color: rgb(24, 205, 24);
+}
+.expandMore:hover {
+  background-color: rgb(24, 205, 24);
+}
