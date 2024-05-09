@@ -1,7 +1,12 @@
 import styles from "../styles/articleCommentsList.module.css";
 import CommentCard from "./CommentCard";
 
-const ArticleCommentsList = ({ comments, users }) => {
+const ArticleCommentsList = ({
+  comments,
+  users,
+  setDeleteCommentId,
+  setComments,
+}) => {
   return (
     <ul className={styles.articleCommentsList}>
       {comments &&
@@ -11,6 +16,8 @@ const ArticleCommentsList = ({ comments, users }) => {
               comment={comment}
               users={users}
               key={comment.comment_id}
+              setDeleteCommentId={setDeleteCommentId}
+              setComments={setComments}
             />
           );
         })}

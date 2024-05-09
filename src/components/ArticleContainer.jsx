@@ -5,7 +5,7 @@ import CommentsController from "./CommentsController";
 import MainArticleCard from "./MainArticleCard";
 import { UserContext } from "../context/UserContext";
 import { useParams } from "react-router-dom";
-import { postArticleComment } from "../utils/commentsApi";
+import { deleteArticleComment, postArticleComment } from "../utils/commentsApi";
 
 const ArticleContainer = ({
   article,
@@ -19,24 +19,31 @@ const ArticleContainer = ({
   const { article_id } = useParams();
   const [isComments, setIsComments] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [deleteCommentId, setDeleteCommentId] = useState(null);
   const [userComment, setUserComment] = useState({
     body: "",
   });
   const { body } = userComment;
 
-  const isFirst = useRef(true);
+  const isFirstPost = useRef(true);
+  const isFirstDelete = useRef(true);
   useEffect(() => {
-    if (!isFirst.current) {
+    if (!isFirstPost.current) {
       postArticleComment(article_id, body, username).then((comment) => {
         console.log(comment);
         setComments([comment, ...comments]);
       });
     }
   }, [userComment]);
-  console.log(comments);
+  useEffect(() => {
+    if (!isFirstDelete.current) {
+      deleteArticleComment(deleteCommentId).then(() => {});
+    }
+  }, [deleteCommentId]);
 
   useEffect(() => {
-    isFirst.current = false;
+    isFirstPost.current = false;
+    isFirstDelete.current = false;
   }, []);
 
   function handleViewComments() {
@@ -59,7 +66,14 @@ const ArticleContainer = ({
         setIsLoggedIn={setIsLoggedIn}
         setUserComment={setUserComment}
       />
-      {isComments && <ArticleComments comments={comments} users={users} />}
+      {isComments && (
+        <ArticleComments
+          comments={comments}
+          users={users}
+          setDeleteCommentId={setDeleteCommentId}
+          setComments={setComments}
+        />
+      )}
     </div>
   );
 };

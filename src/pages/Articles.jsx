@@ -13,7 +13,6 @@ const Articles = () => {
   useEffect(() => {
     setIsLoading(true);
     getAllArticles().then(({ data }) => {
-      console.log(data.results.articles);
       setArticles(data.results.articles);
       setIsLoading(false);
     });
@@ -21,7 +20,6 @@ const Articles = () => {
 
   useEffect(() => {
     getAllUsers().then(({ data }) => {
-      console.log(data.users);
       setUsers(data.users);
     });
   }, []);

@@ -58,3 +58,8 @@
 .timeStamp {
   margin-right: 0.3rem;
 }
+
+.deleteBtn {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
