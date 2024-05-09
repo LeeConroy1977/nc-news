@@ -1,9 +1,10 @@
 .main {
-  display: grid;
+  display: flex;
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
   justify-content: flex-start;
   align-items: center;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  width: 100%;
 }

@@ -1,0 +1,43 @@
+.signInCard {
+  width: 70%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  margin-top: 2rem;
+  border: 2px solid black;
+}
+
+.leftContainer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #a5ddf5;
+}
+
+.rightContainer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-left: 2px solid black;
+}
+
+.avatarTitle {
+  background-color: #ffffff;
+  padding: 0.3rem 0.8rem;
+  border: 2px solid black;
+  font-size: 0.9rem;
+}
+
+.formTitle {
+  background-color: #a5ddf5;
+  padding: 0.3rem 0.8rem;
+  border: 2px solid black;
+  font-size: 0.9rem;
+}

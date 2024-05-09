@@ -1,24 +1,22 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/article.module.css";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+
 import ArticleContainer from "../components/ArticleContainer";
 import Loading from "../components/Loading";
 import { getAllUsers } from "../utils/usersApi";
 import { getArticle } from "../utils/articlesApi";
 import { getArticleComments } from "../utils/commentsApi";
+import VallidationModel from "../components/VallidationModel";
 
 const Article = () => {
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [users, setUsers] = useState([]);
   const [comments, setComments] = useState([]);
 
   const { article_id } = useParams();
-
-  // const loudSpeakerApi = axios.create({
-  //   baseURL: `https://nc-news-northcoders-project.onrender.com/api/articles/${article_id}`,
-  // });
 
   useEffect(() => {
     setIsLoading(true);
@@ -42,7 +40,13 @@ const Article = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <ArticleContainer article={article} users={users} comments={comments} />
+        <ArticleContainer
+          article={article}
+          users={users}
+          comments={comments}
+          setIsLoggedIn={setIsLoggedIn}
+          setArticle={setArticle}
+        />
       )}
     </main>
   );

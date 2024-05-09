@@ -5,7 +5,13 @@ import ArticleCommentsList from "./ArticleCommentsList";
 import CommentsController from "./CommentsController";
 import MainArticleCard from "./MainArticleCard";
 
-const ArticleContainer = ({ article, users, comments }) => {
+const ArticleContainer = ({
+  article,
+  users,
+  comments,
+  setIsLoggedIn,
+  setArticle,
+}) => {
   const [isComments, setIsComments] = useState(false);
 
   function handleViewComments() {
@@ -14,7 +20,12 @@ const ArticleContainer = ({ article, users, comments }) => {
 
   return (
     <div className={styles.articleContainer}>
-      <MainArticleCard article={article} users={users} />
+      <MainArticleCard
+        article={article}
+        users={users}
+        setIsLoggedIn={setIsLoggedIn}
+        setArticle={setArticle}
+      />
       <CommentsController
         handleViewComments={handleViewComments}
         isComments={isComments}
