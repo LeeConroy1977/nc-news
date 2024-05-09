@@ -5,16 +5,27 @@
   border: 2px solid black;
   border-top: none;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.commentsControllerExpanded {
+  width: 66%;
+  height: 6rem;
+  background-color: #a5ddf5;
+  border: 2px solid black;
+  border-top: none;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .commentExpander {
-  width: 20%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 2rem;
 }
 
 .expanderText {
@@ -41,4 +52,32 @@
 }
 .expandMore:hover {
   background-color: rgb(24, 205, 24);
+}
+
+.postExpander {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin-right: 2rem;
+  padding: 0rem 0.6rem;
+  background-color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.postExpanderText {
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-right: 0.8rem;
+}
+
+.commentIcon {
+  font-size: 1.5rem;
+}
+
+.commentformClose {
+  font-size: 1.8rem;
+  margin-right: 3rem;
+  cursor: pointer;
 }

@@ -1,0 +1,28 @@
+.commentForm {
+  width: 60%;
+  height: 60%;
+  display: flex;
+}
+
+.textArea {
+  width: 80%;
+  border-radius: 150px 0 0 150px;
+  border: 2px solid black;
+  border-right: none;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  overflow-y: scroll;
+}
+
+.formBtn {
+  padding: 0.3rem 0.5rem;
+  border-radius: 0 150px 150px 0;
+  width: 15%;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  border: 2px solid black;
+  cursor: pointer;
+}

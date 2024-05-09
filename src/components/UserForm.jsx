@@ -4,28 +4,16 @@ import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 
-const UserForm = ({
-  userAvatarSelection,
-  setUserAvatarSelection,
-  setUserSelection,
-  userObj,
-}) => {
+const UserForm = ({ userAvatarSelection, setUserAvatarSelection, userObj }) => {
   const { avatar_url, name, username } = userAvatarSelection;
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
-
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setUserAvatarSelection((obj) => (obj = { ...obj, [name]: value }));
-  }
-
-  console.log(userAvatarSelection);
 
   function handleSubmit(e) {
     e.preventDefault();
     if (avatar_url && name && username) {
       setUser(userAvatarSelection);
-      console.log(user);
+
       setUserAvatarSelection(userObj);
     }
   }
@@ -57,11 +45,11 @@ const UserForm = ({
       <label htmlFor="UserName">UserName</label>
       <input
         type="text"
-        required
+        disabled
+        placeholder={username}
         name="username"
         id="userName"
-        value={userAvatarSelection.username}
-        onChange={handleChange}
+        value={username}
       />
       <button className={styles.formBtn} onClick={handleNavagtionClick}>
         Submit

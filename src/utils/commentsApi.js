@@ -9,3 +9,11 @@ export async function getArticleComments(id) {
     return data.articleComments;
   });
 }
+
+export async function postArticleComment(id, body, username) {
+  return loudSpeakerApi
+    .post(`/api/articles/${id}/comments`, { body, username })
+    .then(({ data }) => {
+      return data.comment;
+    });
+}

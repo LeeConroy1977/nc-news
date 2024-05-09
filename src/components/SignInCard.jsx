@@ -7,7 +7,6 @@ const SignInCard = ({
   handleClick,
   userAvatarSelection,
   setUserAvatarSelection,
-  setUserSelection,
   userObj,
 }) => {
   return (
@@ -17,11 +16,10 @@ const SignInCard = ({
         <AvatarList avatars={avatars} handleClick={handleClick} />
       </div>
       <div className={styles.rightContainer}>
-        <h3 className={styles.formTitle}>Enter A User Name</h3>
+        <h3 className={styles.formTitle}>Press Submit</h3>
         <UserForm
           userAvatarSelection={userAvatarSelection}
           setUserAvatarSelection={setUserAvatarSelection}
-          setUserSelection={setUserSelection}
           userObj={userObj}
         />
       </div>
