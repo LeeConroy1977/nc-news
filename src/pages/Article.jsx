@@ -21,16 +21,13 @@ const Article = () => {
   useEffect(() => {
     setIsLoading(true);
     getArticle(article_id).then((article) => {
-      console.log(article);
       setArticle(article);
       setIsLoading(false);
     });
     getAllUsers().then(({ data }) => {
-      console.log(data.users);
       setUsers(data.users);
     });
     getArticleComments(article_id).then((articleComments) => {
-      console.log(articleComments);
       setComments(articleComments);
     });
   }, [article_id]);
@@ -44,6 +41,7 @@ const Article = () => {
           article={article}
           users={users}
           comments={comments}
+          setComments={setComments}
           setIsLoggedIn={setIsLoggedIn}
           setArticle={setArticle}
         />

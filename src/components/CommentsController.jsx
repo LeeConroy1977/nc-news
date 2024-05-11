@@ -1,10 +1,43 @@
 import styles from "../styles/commentsController.module.css";
 import { MdOutlineExpandLess } from "react-icons/md";
 import { MdOutlineExpandMore } from "react-icons/md";
+import { FaRegCommentAlt } from "react-icons/fa";
+import { UserContext } from "../context/UserContext";
+import { useContext, useState } from "react";
+import CommentForm from "./CommentForm";
+import { IoMdCloseCircleOutline } from "react-icons/io";
+const CommentsController = ({
+  handleViewComments,
+  isComments,
+  setIsComments,
+  setIsLoggedIn,
+  setUserComment,
+}) => {
+  const [isCommentClick, setIsCommentClick] = useState(false);
+  const { user } = useContext(UserContext);
+  const { username } = user;
 
-const CommentsController = ({ handleViewComments, isComments }) => {
+  function handlePostCommentClick() {
+    if (!username) {
+      setIsCommentClick(false);
+      setIsLoggedIn(false);
+    }
+    if (username) {
+      setIsCommentClick((isCommentClick) => !isCommentClick);
+      setIsComments(true);
+    }
+  }
+
+  function handleCloseClick() {
+    setIsCommentClick(false);
+  }
+
+  const classname = isCommentClick
+    ? styles.commentsControllerExpanded
+    : styles.commentsController;
+
   return (
-    <div className={styles.commentsController}>
+    <div className={classname}>
       <div className={styles.commentExpander}>
         {isComments ? (
           <>
@@ -24,6 +57,20 @@ const CommentsController = ({ handleViewComments, isComments }) => {
           </>
         )}
       </div>
+      {!isCommentClick ? (
+        <div className={styles.postExpander} onClick={handlePostCommentClick}>
+          <p className={styles.postExpanderText}>Add Comment</p>
+          <FaRegCommentAlt className={styles.commentIcon} />
+        </div>
+      ) : (
+        <>
+          <CommentForm setUserComment={setUserComment} />
+          <IoMdCloseCircleOutline
+            className={styles.commentformClose}
+            onClick={handleCloseClick}
+          />
+        </>
+      )}
     </div>
   );
 };

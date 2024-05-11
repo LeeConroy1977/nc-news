@@ -2,13 +2,19 @@ import styles from "../styles/mainArticleCard.module.css";
 import UserMainArticle from "./UserMainArticle";
 import CommentsMainArticle from "./CommentsMainArticle";
 import VotesMainArticle from "./VotesMainArticle";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import { patchArticle } from "../utils/articlesApi";
 import { useParams } from "react-router-dom";
 import VallidationModel from "./VallidationModel";
 
-const MainArticleCard = ({ article, users, setArticle }) => {
+const MainArticleCard = ({
+  article,
+  users,
+  setArticle,
+  isLoggedIn,
+  setIsLoggedIn,
+}) => {
   const {
     title,
     body,
@@ -24,7 +30,6 @@ const MainArticleCard = ({ article, users, setArticle }) => {
   const { username } = user;
   const [votesCount, setVotesCount] = useState(votes);
   const [inc_votes, setInc_votes] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   let userName = "";
   let avatar_url = "";
@@ -32,12 +37,20 @@ const MainArticleCard = ({ article, users, setArticle }) => {
   const dateStamp = new Date(created_at).toLocaleDateString();
   const timeStamp = new Date(created_at).toLocaleTimeString();
 
+  const isFirst = useRef(true);
+
   useEffect(() => {
-    patchArticle(article_id, inc_votes).then((article) => {
-      console.log(article);
-      setArticle(article);
-    });
+    if (!isFirst.current) {
+      patchArticle(article_id, inc_votes).then((article) => {
+        console.log(article);
+        setArticle(article);
+      });
+    }
   }, [inc_votes, votesCount]);
+
+  useEffect(() => {
+    isFirst.current = false;
+  }, []);
 
   function handleIncVotesClick() {
     if (!username) {
@@ -82,7 +95,10 @@ const MainArticleCard = ({ article, users, setArticle }) => {
         <img className={styles.articleImage} src={article_img_url} alt="" />
         <div className={styles.articleStats}>
           <UserMainArticle userName={userName} avatar_url={avatar_url} />
-          <CommentsMainArticle numComments={comment_count} />
+          <CommentsMainArticle
+            numComments={comment_count}
+            setIsLoggedIn={setIsLoggedIn}
+          />
           <VotesMainArticle
             numVotes={votesCount}
             handleIncVotesClick={handleIncVotesClick}

@@ -4,13 +4,19 @@ import Article from "../pages/Article";
 import styles from "../styles/main.module.css";
 import SignIn from "../pages/SignIn";
 
-// import { getArticle } from "../utils/articlesApi";
-
-const Main = () => {
+const Main = ({ selectedTopic }) => {
   return (
     <main className={styles.main}>
       <Routes>
-        <Route path="/" element={<Articles />} />
+        <Route path="/" element={<Articles selectedTopic={selectedTopic} />} />
+        <Route
+          path="/articles"
+          element={<Articles selectedTopic={selectedTopic} />}
+        />
+        {/* <Route
+          path={`/articles?topic=${selectedTopic}`}
+          element={<Articles selectedTopic={selectedTopic} />}
+        /> */}
         <Route path="/articles/:article_id" element={<Article />} />
         <Route path="/signIn" element={<SignIn />} />
       </Routes>

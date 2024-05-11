@@ -20,7 +20,7 @@ const Header = () => {
     <div className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.logo}>
-          <p className={styles.logoText}>LoudSpeaker</p>
+          <p className={styles.logoText}>Mr News</p>
         </div>
         <div className={styles.rightContainer}>
           <ul className={styles.navLinks}>

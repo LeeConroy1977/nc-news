@@ -4,24 +4,28 @@ import { getAllUsers } from "../utils/usersApi";
 import Loading from "../components/Loading";
 import ArticleList from "../components/ArticleList";
 import styles from "../styles/articles.module.css";
+import { useSearchParams } from "react-router-dom";
 
-const Articles = () => {
+const Articles = ({ selectedTopic }) => {
   const [articles, setArticles] = useState([]);
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const topicParam = searchParams.get("topic");
+  console.log(topicParam);
 
   useEffect(() => {
     setIsLoading(true);
-    getAllArticles().then(({ data }) => {
-      console.log(data.results.articles);
+    getAllArticles(topicParam).then(({ data }) => {
       setArticles(data.results.articles);
       setIsLoading(false);
     });
-  }, []);
+  }, [topicParam]);
 
+  console.log(articles);
   useEffect(() => {
     getAllUsers().then(({ data }) => {
-      console.log(data.users);
       setUsers(data.users);
     });
   }, []);
@@ -32,7 +36,7 @@ const Articles = () => {
         <Loading />
       ) : (
         <>
-          <h2 className={styles.categoryTitle}>Category</h2>
+          <h2 className={styles.categoryTitle}>{selectedTopic}</h2>
           <ArticleList articles={articles} users={users} />
         </>
       )}

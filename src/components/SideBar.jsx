@@ -1,7 +1,12 @@
 import styles from "../styles/sideBar.module.css";
+import TopicsContainer from "./TopicsContainer";
 
-const SideBar = () => {
-  return <section className={styles.sideBar}></section>;
+const SideBar = ({ topics, setSelectedTopic }) => {
+  return (
+    <section className={styles.sideBar}>
+      <TopicsContainer topics={topics} setSelectedTopic={setSelectedTopic} />
+    </section>
+  );
 };
 
 export default SideBar;

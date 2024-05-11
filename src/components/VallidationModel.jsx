@@ -14,7 +14,14 @@ const VallidationModel = ({ isLoggedIn, setIsLoggedIn }) => {
       <div className={styles.btn} onClick={handleModelclick}>
         {<IoMdCloseCircleOutline />}
       </div>
-      <h4>You need to be signed in to vote!</h4>
+      <div className={styles.validationMsg}>
+        <img
+          className={styles.validationImage}
+          src="https://vignette.wikia.nocookie.net/mrmen/images/7/7e/MrMen-Bump.png/revision/latest?cb=20180123225553"
+          alt=""
+        />
+        <h4>You need to be signed in...</h4>
+      </div>
       <Link className={styles.signInBtn} to="/signIn">
         Sign In
       </Link>

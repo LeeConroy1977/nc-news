@@ -4,8 +4,12 @@ const loudSpeakerApi = axios.create({
   baseURL: "https://nc-news-northcoders-project.onrender.com",
 });
 
-export const getAllArticles = () => {
-  return loudSpeakerApi.get("/api/articles");
+export const getAllArticles = (topic, order = "desc") => {
+  const params = {
+    topic,
+    order,
+  };
+  return loudSpeakerApi.get("/api/articles", { params });
 };
 
 export async function getArticle(id) {
