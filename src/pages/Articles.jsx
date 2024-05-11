@@ -13,17 +13,20 @@ const Articles = ({ selectedTopic }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const topicParam = searchParams.get("topic");
-  console.log(topicParam);
+  const sortedByParam = searchParams.get("sorted_by");
+  const orderedByParam = searchParams.get("order");
 
   useEffect(() => {
     setIsLoading(true);
-    getAllArticles(topicParam).then(({ data }) => {
-      setArticles(data.results.articles);
-      setIsLoading(false);
-    });
-  }, [topicParam]);
+    getAllArticles(topicParam, sortedByParam, orderedByParam).then(
+      ({ data }) => {
+        setArticles(data.results.articles);
+        setIsLoading(false);
+        console.log(data.results.total_count);
+      }
+    );
+  }, [topicParam, sortedByParam, orderedByParam]);
 
-  console.log(articles);
   useEffect(() => {
     getAllUsers().then(({ data }) => {
       setUsers(data.users);
