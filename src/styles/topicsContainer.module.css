@@ -1,0 +1,7 @@
+.topicsConatainer {
+  width: 64%;
+  height: auto;
+  border: 2px solid black;
+  margin-top: 4rem;
+  border-bottom: none;
+}
