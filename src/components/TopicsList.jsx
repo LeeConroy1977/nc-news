@@ -5,9 +5,14 @@ import styles from "../styles/topicsList.module.css";
 const TopicsList = ({ topics, setSelectedTopic }) => {
   return (
     <ul className={styles.topicsList}>
-      <li className={styles.defaultTopic} key="articles">
-        All
+      <li className={styles.defaultTopic} key="">
+        TOPICS
       </li>
+      <Link to="/">
+        <li className={styles.defaultTopic} key="articles">
+          All
+        </li>
+      </Link>
       {topics &&
         topics.map((topic) => {
           return (

@@ -7,7 +7,12 @@ const TopicsCard = ({ topic, setSelectedTopic }) => {
     setSelectedTopic(slug);
   }
   return (
-    <li className={styles.topicsCard} onClick={handleClick}>
+    <li
+      className={styles.topicsCard}
+      onClick={() => {
+        handleClick();
+      }}
+    >
       {slug}
     </li>
   );
