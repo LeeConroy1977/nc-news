@@ -1,9 +1,7 @@
 .articleContainer {
   width: 100%;
-  min-height: auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 1.5rem;
 }

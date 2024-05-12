@@ -10,8 +10,8 @@
 }
 .commentsControllerExpanded {
   width: 66%;
-  height: 6rem;
-  background-color: #114c93;
+  height: 5rem;
+
   border: 2px solid black;
   border-top: none;
   display: flex;
@@ -22,7 +22,7 @@
 .commentExpander {
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-left: 2rem;
@@ -31,8 +31,9 @@
 .expanderText {
   font-size: 0.7rem;
   font-weight: bold;
-  margin: 0.3rem 0;
+  margin: 0.3rem 0.5rem;
   padding: 0;
+  color: white;
 }
 
 .expandLess,
@@ -61,10 +62,10 @@
   border: 2px solid black;
   margin-right: 2rem;
   padding: 0rem 0.6rem;
-  background-color: #114c93;
   border-radius: 6px;
   cursor: pointer;
-  color: white;
+  color: black;
+  background-color: white;
 }
 
 .postExpanderText {
@@ -76,11 +77,22 @@
 .commentIcon {
   font-size: 1.5rem;
   color: black;
-  fill: white;
 }
 
 .commentformClose {
   font-size: 1.8rem;
   margin-right: 3rem;
   cursor: pointer;
+}
+
+.coding {
+  background-color: #9d6bc6;
+}
+
+.football {
+  background-color: #f75054;
+}
+
+.cooking {
+  background-color: #009354;
 }

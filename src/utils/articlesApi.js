@@ -18,9 +18,7 @@ export const getAllArticles = (topic, sorted_by, order = "desc", limit, p) => {
 };
 
 export async function getArticle(id) {
-  console.log(id);
   return loudSpeakerApi.get(`/api/articles/${id}`).then(({ data }) => {
-    console.log(data);
     return data.article;
   });
 }

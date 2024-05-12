@@ -12,10 +12,12 @@ const CommentsController = ({
   setIsComments,
   setIsLoggedIn,
   setUserComment,
+  article,
 }) => {
   const [isCommentClick, setIsCommentClick] = useState(false);
   const { user } = useContext(UserContext);
   const { username } = user;
+  const { topic } = article;
 
   function handlePostCommentClick() {
     if (!username) {
@@ -36,16 +38,25 @@ const CommentsController = ({
     ? styles.commentsControllerExpanded
     : styles.commentsController;
 
+  const topicClassname =
+    topic === "coding"
+      ? styles.coding
+      : topic === "football"
+      ? styles.football
+      : topic === "cooking"
+      ? styles.cooking
+      : "";
+
   return (
-    <div className={classname}>
+    <div className={`${classname}  ${topicClassname}`}>
       <div className={styles.commentExpander}>
         {isComments ? (
           <>
+            <p className={styles.expanderText}>Hide Comments</p>
             <MdOutlineExpandLess
               onClick={handleViewComments}
               className={styles.expandLess}
             />
-            <p className={styles.expanderText}>Hide Comments</p>
           </>
         ) : (
           <>

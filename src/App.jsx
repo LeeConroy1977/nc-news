@@ -36,8 +36,6 @@ function App() {
     });
   }, []);
 
-  console.log(sortedBy);
-
   return (
     <div className="app">
       <Header />

@@ -1,12 +1,14 @@
 .articleComments {
   width: 66%;
-  height: auto;
+  /* height: auto; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   overflow: scroll;
   border: 2px solid black;
+  border-bottom: none;
   border-top: none;
   overflow: hidden;
+  margin-bottom: 2rem;
 }

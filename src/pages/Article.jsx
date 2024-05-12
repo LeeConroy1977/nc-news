@@ -16,17 +16,14 @@ const Article = () => {
   const [comments, setComments] = useState([]);
 
   const { article_id } = useParams();
-  console.log(article_id);
 
   useEffect(() => {
     article_id &&
-      getArticle(article_id)
-        .then((article) => {
-          setArticle(article);
-          setIsLoading(false);
-          console.log(article);
-        })
-        
+      getArticle(article_id).then((article) => {
+        setArticle(article);
+        setIsLoading(false);
+      });
+
     getAllUsers().then(({ data }) => {
       setUsers(data.users);
     });

@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: rgba(15, 15, 15, 0.7);
   cursor: pointer;
   font-weight: bold;
@@ -17,6 +18,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+
   list-style: none;
   width: 18px;
   height: 18px;
@@ -24,5 +26,6 @@
   background-color: #0d96d5;
   font-size: 0.8rem;
   /* box-shadow: 0.5px 0.5px 0.05px 0.05px rgba(47, 47, 47, 0.75); */
+  border: 1px solid black;
   color: white;
 }
