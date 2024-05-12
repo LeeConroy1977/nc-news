@@ -1,0 +1,58 @@
+.containerMainArticles {
+  min-width: 34%;
+  height: 13%;
+  /* background-color: #0d96d5; */
+  /* opacity: 0.9; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 2px solid black;
+  border-left: none;
+  border-bottom: none;
+}
+
+.avatarImageMainArticles {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  padding: 0.15rem;
+  border: 1.8px solid black;
+  margin-left: 0.4rem;
+  background-color: white;
+}
+
+.authorNameMainArticles {
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: white;
+  margin-left: 0.6rem;
+  opacity: 1;
+}
+
+.tomTickle {
+  background-color: #fe8100;
+}
+
+.paulGrump {
+  background-color: #0d98d5;
+}
+
+.amyHappy {
+  background-color: #dbbe02;
+}
+
+.peterMessy {
+  background-color: #e61283;
+}
+
+.gemmaBump {
+  background-color: #0061ff;
+}
+
+.jessJelly {
+  background-color: #cf197b;
+}
