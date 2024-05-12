@@ -9,15 +9,16 @@ const sortByArr = [
   { title: "Author", sort: "author" },
 ];
 
-const SortByContainer = ({ setSortedBy, handleSortedByParams }) => {
+const SortByContainer = ({ sortedBy, setSortedBy, handleSortedByParams }) => {
   return (
     <ul className={styles.sortByContainer}>
-      <li>SORT BY</li>
+      <li className={styles.sortByHeader}>SORT BY</li>
       {sortByArr.map((item) => {
         return (
           <SortByCard
             item={item}
             key={item.title}
+            sortedBy={sortedBy}
             setSortedBy={setSortedBy}
             handleSortedByParams={handleSortedByParams}
           />

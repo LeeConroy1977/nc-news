@@ -1,6 +1,6 @@
 .topicsCard {
   width: 100%;
-  height: 2.3rem;
+  height: 2.1rem;
   border-bottom: 2px solid black;
   display: flex;
   justify-content: center;
@@ -8,4 +8,33 @@
   cursor: pointer;
   text-decoration: none;
   list-style: none;
+  font-size: 0.9rem;
+}
+
+.cooking,
+.coding,
+.football {
+  color: white;
+  width: 100%;
+  height: 2.1rem;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.coding {
+  background-color: #a896c7;
+}
+
+.football {
+  background-color: #f75054;
+}
+
+.cooking {
+  background-color: #009354;
 }

@@ -7,7 +7,7 @@ import styles from "../styles/articles.module.css";
 import { useSearchParams } from "react-router-dom";
 import PaginationList from "../components/PaginationList";
 
-const Articles = ({ page, setPage }) => {
+const Articles = ({ page, setPage, selectedTopic }) => {
   const [articles, setArticles] = useState([]);
   const [totalArticles, setTotalArticles] = useState("");
   const [currentArticles, setCurrentArticles] = useState(null);
@@ -58,12 +58,17 @@ const Articles = ({ page, setPage }) => {
           paginationArr={paginationArr}
           setPage={setPage}
           page={page}
+          selectedTopic={selectedTopic}
         />
       </div>
       {isLoading ? (
         <Loading />
       ) : (
-        <ArticleList articles={articles} users={users} />
+        <ArticleList
+          articles={articles}
+          users={users}
+          selectedTopic={selectedTopic}
+        />
       )}
     </div>
   );

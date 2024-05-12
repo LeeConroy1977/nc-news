@@ -19,11 +19,24 @@
 
 .category {
   height: 20px;
-  background-color: #a5ddf5;
   position: relative;
   top: -20px;
   padding: 0.2rem 0.6rem;
   font-weight: bold;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.coding {
+  background-color: #a896c7;
+}
+
+.football {
+  background-color: #f75054;
+}
+
+.cooking {
+  background-color: #009354;
 }
 
 .bottomContainer {

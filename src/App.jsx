@@ -8,9 +8,9 @@ import { useSearchParams } from "react-router-dom";
 
 function App() {
   const [topics, setTopics] = useState([]);
-  const [sortedBy, setSortedBy] = useState(null);
-  const [orderBy, setOrderBy] = useState(null);
-  const [selectedTopic, setSelectedTopic] = useState(null);
+  const [sortedBy, setSortedBy] = useState("created_at");
+  const [orderBy, setOrderBy] = useState("desc");
+  const [selectedTopic, setSelectedTopic] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const [page, setPage] = useState(1);
 
@@ -43,11 +43,15 @@ function App() {
       <Header />
       <SideBar
         topics={topics}
+        selectedTopic={selectedTopic}
         setSelectedTopic={setSelectedTopic}
+        sortedBy={sortedBy}
         setSortedBy={setSortedBy}
         handleSortedByParams={handleSortedByParams}
         handleOrderParams={handleOrderParams}
         setPage={setPage}
+        orderBy={orderBy}
+        setOrderBy={setOrderBy}
       />
       <Main
         selectedTopic={selectedTopic}

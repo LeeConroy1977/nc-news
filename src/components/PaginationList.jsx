@@ -3,7 +3,7 @@ import PaginationListItem from "./PaginationListItem";
 import { MdNavigateBefore } from "react-icons/md";
 import { MdNavigateNext } from "react-icons/md";
 
-const PaginationList = ({ paginationArr, setPage, page }) => {
+const PaginationList = ({ paginationArr, setPage, page, selectedTopic }) => {
   function handlePageClick(num) {
     setPage(num);
   }
@@ -33,6 +33,7 @@ const PaginationList = ({ paginationArr, setPage, page }) => {
               key={num}
               handlePageClick={handlePageClick}
               page={page}
+              selectedTopic={selectedTopic}
             />
           );
         })}
