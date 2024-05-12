@@ -2,7 +2,7 @@ import ArticleCard from "./ArticleCard";
 import styles from "../styles/articleList.module.css";
 import { Link } from "react-router-dom";
 
-const ArticleList = ({ articles, users }) => {
+const ArticleList = ({ articles, users, selectedTopic }) => {
   return (
     <ul className={styles.articleList}>
       {articles &&
@@ -21,6 +21,7 @@ const ArticleList = ({ articles, users }) => {
                   key={article.article_id}
                   article={article}
                   users={users}
+                  selectedTopic={selectedTopic}
                 />
               </Link>
             </div>

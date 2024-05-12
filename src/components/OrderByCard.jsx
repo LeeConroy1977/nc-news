@@ -1,8 +1,24 @@
-import React from "react";
+import styles from "../styles/orderByCard.module.css";
 
-const OrderByCard = ({ item, handleOrderParams }) => {
+const OrderByCard = ({ item, handleOrderParams, setOrderBy, orderBy }) => {
   const { title, order } = item;
-  return <li onClick={() => handleOrderParams(order)}>{title}</li>;
+
+  let classname =
+    orderBy === "desc" && order === "desc"
+      ? styles.selected
+      : orderBy === "asc" && order === "asc"
+      ? styles.selected
+      : styles.orderByCard;
+  return (
+    <li
+      className={classname}
+      onClick={() => {
+        setOrderBy(order), handleOrderParams(order);
+      }}
+    >
+      {title}
+    </li>
+  );
 };
 
 export default OrderByCard;

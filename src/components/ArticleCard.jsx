@@ -3,7 +3,7 @@ import CommentsDetails from "./CommentsDetails";
 import UserDetail from "./UserDetail";
 import VotesDetails from "./VotesDetails";
 
-const ArticleCard = ({ article, users }) => {
+const ArticleCard = ({ article, users, selectedTopic }) => {
   const {
     title,
     article_img_url,
@@ -25,6 +25,15 @@ const ArticleCard = ({ article, users }) => {
       }
     });
 
+  const classname =
+    article.topic === "coding"
+      ? `${styles.category} ${styles.coding}`
+      : article.topic === "football"
+      ? `${styles.category} ${styles.football}`
+      : article.topic === "cooking"
+      ? `${styles.category} ${styles.cooking}`
+      : styles.paginationNum;
+
   return (
     <>
       <div className={styles.topContainer}>
@@ -33,7 +42,7 @@ const ArticleCard = ({ article, users }) => {
           src={article_img_url}
           alt={`Image for the article ${article.title}`}
         />
-        <span className={styles.category}>{topic}</span>
+        <span className={classname}>{topic}</span>
       </div>
 
       <div className={styles.bottomContainer}>
