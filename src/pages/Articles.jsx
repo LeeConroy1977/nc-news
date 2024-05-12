@@ -53,7 +53,7 @@ const Articles = ({ page, setPage, selectedTopic }) => {
   return (
     <div className={styles.articles}>
       <div className={styles.articleHeader}>
-        <p className={styles.currentArticles}>{`Articles: ${totalArticles}`}</p>
+        {/* <p className={styles.currentArticles}>{`Articles: ${totalArticles}`}</p> */}
         <PaginationList
           paginationArr={paginationArr}
           setPage={setPage}

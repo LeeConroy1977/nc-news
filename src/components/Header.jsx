@@ -32,17 +32,17 @@ const Header = () => {
         </NavLink>
         <div className={styles.rightContainer}>
           <ul className={styles.navLinks}>
-            <NavLink to="/">
+            <NavLink to="/" className={styles.navLinks}>
               <li className={styles.link}>ARTICLES</li>
             </NavLink>
             {username ? (
-              <NavLink to="/">
+              <NavLink to="/" className={styles.navLinks}>
                 <li className={styles.link} onClick={handleSignOut}>
                   SIGN OUT
                 </li>
               </NavLink>
             ) : (
-              <NavLink to="/signIn">
+              <NavLink to="/signIn" className={styles.navLinks}>
                 <li className={styles.link} onClick={handleSignOut}>
                   SIGN IN
                 </li>
