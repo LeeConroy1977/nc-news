@@ -15,7 +15,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #a5ddf5;
+  background-color: #114c93;
 }
 
 .rightContainer {
@@ -36,8 +36,9 @@
 }
 
 .formTitle {
-  background-color: #a5ddf5;
+  background-color: #114c93;
   padding: 0.3rem 0.8rem;
   border: 2px solid black;
   font-size: 0.9rem;
+  color: white;
 }

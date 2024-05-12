@@ -7,7 +7,6 @@ import Loading from "../components/Loading";
 import { getAllUsers } from "../utils/usersApi";
 import { getArticle } from "../utils/articlesApi";
 import { getArticleComments } from "../utils/commentsApi";
-import VallidationModel from "../components/VallidationModel";
 
 const Article = () => {
   const [article, setArticle] = useState({});
@@ -17,13 +16,17 @@ const Article = () => {
   const [comments, setComments] = useState([]);
 
   const { article_id } = useParams();
+  console.log(article_id);
 
   useEffect(() => {
-    setIsLoading(true);
-    getArticle(article_id).then((article) => {
-      setArticle(article);
-      setIsLoading(false);
-    });
+    article_id &&
+      getArticle(article_id)
+        .then((article) => {
+          setArticle(article);
+          setIsLoading(false);
+          console.log(article);
+        })
+        
     getAllUsers().then(({ data }) => {
       setUsers(data.users);
     });

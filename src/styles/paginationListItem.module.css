@@ -1,0 +1,27 @@
+.paginationNum {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(91, 91, 91, 0.7);
+  cursor: pointer;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  font-size: 0.9rem;
+}
+
+.selected {
+  color: rgb(81, 81, 81);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  font-weight: bold;
+  background-color: #114c93;
+  font-size: 0.9rem;
+  box-shadow: 0.5px 0.5px 0.05px 0.05px rgba(99, 99, 99, 0.75);
+  color: white;
+}

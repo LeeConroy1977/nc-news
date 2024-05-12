@@ -9,10 +9,15 @@ const SideBar = ({
   setSortedBy,
   handleOrderParams,
   handleSortedByParams,
+  setPage,
 }) => {
   return (
     <section className={styles.sideBar}>
-      <TopicsContainer topics={topics} setSelectedTopic={setSelectedTopic} />
+      <TopicsContainer
+        topics={topics}
+        setSelectedTopic={setSelectedTopic}
+        setPage={setPage}
+      />
       <SortByContainer
         setSortedBy={setSortedBy}
         handleSortedByParams={handleSortedByParams}

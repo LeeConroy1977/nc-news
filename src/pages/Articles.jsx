@@ -5,12 +5,17 @@ import Loading from "../components/Loading";
 import ArticleList from "../components/ArticleList";
 import styles from "../styles/articles.module.css";
 import { useSearchParams } from "react-router-dom";
+import PaginationList from "../components/PaginationList";
 
-const Articles = ({ selectedTopic }) => {
+const Articles = ({ page, setPage }) => {
   const [articles, setArticles] = useState([]);
+  const [totalArticles, setTotalArticles] = useState("");
+  const [currentArticles, setCurrentArticles] = useState(null);
+
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [limit, setLimit] = useState(6);
 
   const topicParam = searchParams.get("topic");
   const sortedByParam = searchParams.get("sorted_by");
@@ -18,14 +23,16 @@ const Articles = ({ selectedTopic }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    getAllArticles(topicParam, sortedByParam, orderedByParam).then(
-      ({ data }) => {
-        setArticles(data.results.articles);
+    getAllArticles(topicParam, sortedByParam, orderedByParam, limit, page).then(
+      (results) => {
+        setArticles(results.articles);
+        setCurrentArticles(results.articles.length);
         setIsLoading(false);
-        console.log(data.results.total_count);
+        setTotalArticles(results.total_count.total_count);
+        console.log(page);
       }
     );
-  }, [topicParam, sortedByParam, orderedByParam]);
+  }, [topicParam, sortedByParam, orderedByParam, limit, page]);
 
   useEffect(() => {
     getAllUsers().then(({ data }) => {
@@ -33,15 +40,30 @@ const Articles = ({ selectedTopic }) => {
     });
   }, []);
 
+  function getTotalPages(totalArticles, limit) {
+    return Math.ceil(totalArticles / limit);
+  }
+
+  const numPages = getTotalPages(totalArticles, limit);
+  console.log(numPages);
+
+  const paginationArr = [...Array(numPages).keys()].map((num) => num + 1);
+  console.log(paginationArr);
+
   return (
     <div className={styles.articles}>
+      <div className={styles.articleHeader}>
+        <p className={styles.currentArticles}>{`Articles: ${totalArticles}`}</p>
+        <PaginationList
+          paginationArr={paginationArr}
+          setPage={setPage}
+          page={page}
+        />
+      </div>
       {isLoading ? (
         <Loading />
       ) : (
-        <>
-          <h2 className={styles.categoryTitle}>{selectedTopic}</h2>
-          <ArticleList articles={articles} users={users} />
-        </>
+        <ArticleList articles={articles} users={users} />
       )}
     </div>
   );

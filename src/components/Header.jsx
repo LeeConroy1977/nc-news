@@ -19,9 +19,17 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <nav className={styles.nav}>
-        <div className={styles.logo}>
-          <p className={styles.logoText}>Mr News</p>
-        </div>
+        <NavLink to="/" className={styles.link}>
+          <div className={styles.logo}>
+            <img
+              className={styles.logoImage}
+              src="https://vignette.wikia.nocookie.net/mrmen/images/7/78/Mr-Grumpy-3A.PNG/revision/latest?cb=20170707233013"
+              alt=""
+            />
+
+            <p className={styles.logoText}>Mr News</p>
+          </div>
+        </NavLink>
         <div className={styles.rightContainer}>
           <ul className={styles.navLinks}>
             <NavLink to="/">
