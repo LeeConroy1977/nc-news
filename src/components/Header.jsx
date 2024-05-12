@@ -53,7 +53,7 @@ const Header = () => {
             {username ? (
               <img className={styles.navImage} src={avatar_url} alt="" />
             ) : (
-              <RxAvatar />
+              <RxAvatar className={styles.defaultAvatar} />
             )}
           </span>
         </div>
