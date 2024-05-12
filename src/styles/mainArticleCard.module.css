@@ -1,59 +1,61 @@
 .mainArticleCard {
+  position: relative;
   width: 66%;
-  height: 22rem;
+  height: 32rem;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 2.4rem;
   font-family: Arial, Helvetica, sans-serif;
   border: 2px solid black;
 }
 
 .textContainer {
-  /* position: absolute; */
-  width: 55%;
-  height: 100%;
+  width: 100%;
+  height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
-  border-right: 2px solid black;
+
+  border-top: 2px solid black;
 }
 
 .category {
-  position: relative;
+  position: absolute;
   top: 0;
   margin-right: auto;
   margin-left: auto;
   padding: 0.2rem 1.4rem;
-  background-color: #a5ddf5;
+
   border: 2px solid black;
   border-top: none;
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: 0.9rem;
   font-weight: bold;
 }
 
 .articleTitle {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
-  margin-top: 1.2rem;
-  padding: 0.2rem 4rem 0 4rem;
+  margin: 0;
+  margin-top: 0.8rem;
+  padding: 0.2rem 4rem 0.2rem;
   text-align: center;
 }
 
 .articleBody {
   padding: 0rem 2.5rem;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   word-spacing: 0.15rem;
   font-weight: 500;
+  font-weight: bold;
+  margin: 0;
+  margin-top: 0.5rem;
 }
 
 .time {
-  margin-top: auto;
-  margin-left: auto;
   padding: 1rem 3rem;
 }
 
@@ -69,21 +71,128 @@
 }
 
 .imageContainer {
-  width: 45%;
-  height: 100%;
+  position: relative;
+  width: 100%;
+  height: 60%;
   display: flex;
   flex-direction: column;
 }
 
 .articleImage {
   width: 100%;
-  height: 86%;
+  height: 100%;
 }
 
-.articleStats {
-  width: 100%;
-  height: 20%;
+.iconBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 46%;
+  height: 12%;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  border-top: 2px solid black;
+  border: 2px solid black;
+  border-bottom: none;
+  border-left: none;
+}
+
+.commentsIconBox {
+  min-width: 16%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.commentsIcon {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.iconCommentCount {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.votesBox {
+  width: 30%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.votesContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60%;
+  min-width: 90%;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.thumbUp {
+  color: green;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.thumbDown {
+  color: red;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-top: 0.2rem;
+  cursor: pointer;
+}
+
+.votesCount {
+  color: rgb(0, 0, 0);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.tomTickle {
+  background-color: #fe8100;
+}
+
+.paulGrump {
+  background-color: #0d98d5;
+}
+
+.amyHappy {
+  background-color: #dbbe02;
+}
+
+.peterMessy {
+  background-color: #e61283;
+}
+
+.gemmaBump {
+  background-color: #0061ff;
+}
+
+.jessJelly {
+  background-color: #cf197b;
+}
+
+.coding {
+  background-color: #9d6bc6;
+}
+
+.football {
+  background-color: #f75054;
+}
+
+.cooking {
+  background-color: #009354;
 }

@@ -65,6 +65,7 @@ const ArticleContainer = ({
         setIsComments={setIsComments}
         setIsLoggedIn={setIsLoggedIn}
         setUserComment={setUserComment}
+        article={article}
       />
       {isComments && (
         <ArticleComments

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AvatarList from "../components/AvatarList";
 import SignInCard from "../components/SignInCard";
 import styles from "../styles/signIn.module.css";
 

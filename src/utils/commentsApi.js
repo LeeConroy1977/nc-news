@@ -20,7 +20,4 @@ export async function postArticleComment(id, body, username) {
 
 export async function deleteArticleComment(id) {
   return loudSpeakerApi.delete(`/api/comments/${id}`);
-  // .then(({ data }) => {
-  //   return data.comment;
-  // });
 }

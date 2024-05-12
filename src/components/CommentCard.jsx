@@ -1,13 +1,12 @@
 import React from "react";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import UserMainArticle from "../components/UserMainArticle";
 import styles from "../styles/commentCard.module.css";
-import VotesDetails from "../components/VotesDetails";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import AuthorAvatarContainer from "./AuthorAvatarContainer";
 
 const CommentCard = ({ comment, users, setDeleteCommentId, setComments }) => {
-  const { comment_id, body, article_id, author, votes, created_at } = comment;
+  const { comment_id, body, author, created_at } = comment;
 
   const { user } = useContext(UserContext);
   const { username } = user;
@@ -28,8 +27,6 @@ const CommentCard = ({ comment, users, setDeleteCommentId, setComments }) => {
 
   function handleDeleteCommentClick(id) {
     if (Number(id) === comment_id) {
-      console.log(Number(id), comment_id);
-      console.log("this ran!!");
       setDeleteCommentId(id);
       setComments((comment) =>
         comment.filter((comment) => comment.comment_id !== Number(id))
@@ -39,10 +36,13 @@ const CommentCard = ({ comment, users, setDeleteCommentId, setComments }) => {
 
   return (
     <li className={styles.commentCard}>
-      <div className={styles.commentAuthorBox}>
-        <UserMainArticle avatar_url={avatar_url} />
-        <p className={styles.author}>{author}</p>
-      </div>
+      <AuthorAvatarContainer
+        author={author}
+        avatar_url={avatar_url}
+        containerClassname={"containerComments"}
+        avatarClassname={"avatarImageComments"}
+        nameClassname={"authorNameComments"}
+      />
       <div className={styles.commentBodyBox}>
         <p className={styles.commentBody}>{body}</p>
         <div className={styles.time}>
@@ -55,14 +55,12 @@ const CommentCard = ({ comment, users, setDeleteCommentId, setComments }) => {
           </span>
         </div>
       </div>
-      <div className={styles.commentVoteBox}>
-        <VotesDetails numVotes={votes} />
-      </div>
+
       {isUser && (
         <IoMdCloseCircleOutline
           id={comment_id}
           onClick={(e) => handleDeleteCommentClick(e.target.id)}
-          className={styles.deleteBtn} 
+          className={styles.deleteBtn}
         />
       )}
     </li>

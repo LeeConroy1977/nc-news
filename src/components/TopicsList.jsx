@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import TopicsCard from "../components/TopicsCard";
 import styles from "../styles/topicsList.module.css";
-import { useState } from "react";
 
 const TopicsList = ({
   topics,
@@ -26,7 +25,7 @@ const TopicsList = ({
 
   return (
     <ul className={styles.topicsList}>
-      <li className={styles.topicHeader} key="">
+      <li className={styles.topicHeader} key={"topics"}>
         TOPICS
       </li>
       <Link to="/" className={styles.link}>

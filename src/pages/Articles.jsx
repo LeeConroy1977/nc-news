@@ -29,7 +29,6 @@ const Articles = ({ page, setPage, selectedTopic }) => {
         setCurrentArticles(results.articles.length);
         setIsLoading(false);
         setTotalArticles(results.total_count.total_count);
-        console.log(page);
       }
     );
   }, [topicParam, sortedByParam, orderedByParam, limit, page]);
@@ -45,10 +44,8 @@ const Articles = ({ page, setPage, selectedTopic }) => {
   }
 
   const numPages = getTotalPages(totalArticles, limit);
-  console.log(numPages);
 
   const paginationArr = [...Array(numPages).keys()].map((num) => num + 1);
-  console.log(paginationArr);
 
   return (
     <div className={styles.articles}>

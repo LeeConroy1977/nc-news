@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styles from "../styles/sortByContainer.module.css";
 import SortByCard from "./SortByCard";
 
