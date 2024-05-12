@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "../styles/userForm.module.css";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UserForm = ({ userAvatarSelection, setUserAvatarSelection, userObj }) => {
   const { avatar_url, name, username } = userAvatarSelection;

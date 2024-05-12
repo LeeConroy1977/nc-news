@@ -12,6 +12,7 @@ function App() {
   const [orderBy, setOrderBy] = useState(null);
   const [selectedTopic, setSelectedTopic] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [page, setPage] = useState(1);
 
   function handleSortedByParams(sort) {
     setSortedBy(sort);
@@ -46,12 +47,15 @@ function App() {
         setSortedBy={setSortedBy}
         handleSortedByParams={handleSortedByParams}
         handleOrderParams={handleOrderParams}
+        setPage={setPage}
       />
       <Main
         selectedTopic={selectedTopic}
         sortedBy={sortedBy}
         setSearchParams={setSearchParams}
         searchParams={searchParams}
+        page={page}
+        setPage={setPage}
       />
     </div>
   );
